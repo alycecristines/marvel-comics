@@ -1,14 +1,14 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {Container} from './styles';
+import {Container} from '../Home/styles';
 import Header from '../../components/Header';
 
-export default function Home() {
+export default function Series() {
   return (
     <>
       <Container>
         <Header />
-        <Text style={{color: '#fff'}}>Tela home</Text>
+        <Text style={{color: '#fff'}}>Tela series</Text>
       </Container>
     </>
   );

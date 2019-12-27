@@ -1,18 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {Container, Body, Content} from 'native-base';
+
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import {Container, Body, Content} from 'native-base';
-import Home from './views/Home';
 
 import {
   Perfil,
   Title,
   HeaderBox,
 } from './components/CustomDrawerContent/styles';
+
+import Home from './views/Home';
+import Series from './views/Series';
 
 const Drawer = createDrawerNavigator();
 
@@ -46,6 +49,7 @@ export default function Routes() {
         inactiveTintColor: '#000',
       }}>
       <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Series" component={Series} />
     </Drawer.Navigator>
   );
 }
