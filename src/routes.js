@@ -16,6 +16,7 @@ import {
 
 import Home from './views/Home';
 import Series from './views/Series';
+import Characters from './views/Characters';
 
 const Drawer = createDrawerNavigator();
 
@@ -50,6 +51,7 @@ export default function Routes() {
       }}>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Series" component={Series} />
+      <Drawer.Screen name="Characters" component={Characters} />
     </Drawer.Navigator>
   );
 }

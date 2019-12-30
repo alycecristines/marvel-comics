@@ -2,12 +2,15 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Icon} from 'native-base';
 
+import {getCharacters} from '../../autenticacao';
+
 import {DrawerActions} from '@react-navigation/routers';
 import {useNavigation} from '@react-navigation/native';
+import { DrawerItem } from '@react-navigation/drawer';
 
 export default function Header() {
-  const [title, setTitle] = useState('Screen title');
-  useEffect(() => {});
+  const [title, setTitle] = useState('');
+  // useEffect(() => { setTitle() = navigation(DrawerItem.title)})
 
   const navigation = useNavigation();
 
@@ -17,9 +20,10 @@ export default function Header() {
         name="reorder"
         style={styles.toogleMenu}
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+        // onPress={() => getCharacters()}
       />
       <Text style={styles.titleScreen}>{title}</Text>
-      <Icon name="search" style={styles.searchIcon} />
+      <Icon name="search" style={styles.searchIcon} onPress={() => getCharacters()} />
     </View>
   );
 }
