@@ -2,20 +2,24 @@ import React, {useState, useEffect} from 'react';
 import {Text, View, Image, FlatList} from 'react-native';
 import {Container} from '../Home/styles';
 
-import auth from '../../autenticacao';
 import reactotron from 'reactotron-react-native';
+import {Button} from 'native-base';
+import { useSelector } from 'react-redux';
 
 export default function Characters() {
-
-  
   // name,
   // description,
   // thumbnail.path
   // thumbnail.extension
 
+  const teste = useSelector(state => state.dados)
+
   return (
     <Container>
       <Text style={{color: '#fff'}}>Tela characters</Text>
+      <Button onPress={() => reactotron.log(teste)}>
+        <Text>Teste</Text>
+      </Button>
       <View>
         {/* <FlatList
           data={this.state.data}

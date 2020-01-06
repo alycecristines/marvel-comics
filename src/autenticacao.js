@@ -1,22 +1,33 @@
-import axios from 'axios';
 import md5 from 'js-md5';
-import {PUBLIC_KEY, PRIVATE_KEY, URL_BASE} from './constants';
-import {useState, useEffect} from 'react';
+import {PUBLIC_KEY, PRIVATE_KEY} from './constants';
+import api from './services/api';
+import {useDispatch} from 'react-redux';
+import {useEffect} from 'react';
+import {setDados} from './actions/CharactersActions';
+import reactotron from 'reactotron-react-native';
+
+let timestamp = Math.floor(Date.now() / 1000);
+let hash = md5.create();
+hash.update(timestamp + PRIVATE_KEY + PUBLIC_KEY);
+let valor = hash.hex();
 
 export const getCharacters = async () => {
-  let timestamp = Math.floor(Date.now() / 1000);
-  let hash = md5.create();
-  hash.update(timestamp + PRIVATE_KEY + PUBLIC_KEY);
-  let valor = hash.hex();
+  const response = await api.get(
+    `/characters?ts=${timestamp}&apikey=${PUBLIC_KEY}&hash=${valor}`,
+  );
 
-  const [teste, setTeste] = useState([]);
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios
-      .get(
-        `${URL_BASE}/characters?ts=${timestamp}&apikey=${PUBLIC_KEY}&hash=${valor}`,
-      )
-      .then(res => {
-        setTeste(res.data.items);
-      });
+    if (response.status == 200) {
+      dispatch(setDados(response.data));
+    }
   });
+
+  // axios
+  //   .get(
+  //     `${URL_BASE}/characters?ts=${timestamp}&apikey=${PUBLIC_KEY}&hash=${valor}`,
+  //   )
+  //   .then(res => {
+  //     setTeste(res.data);
+  //   });
 };
