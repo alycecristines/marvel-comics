@@ -4,25 +4,32 @@ import {Container} from '../Home/styles';
 
 import reactotron from 'reactotron-react-native';
 import {Button} from 'native-base';
-import { useSelector } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+
+import getCharactersRequest from '../../actions/characters';
+import {getCharacters} from '../../autenticacao';
 
 export default function Characters() {
   // name,
   // description,
   // thumbnail.path
   // thumbnail.extension
+  
+  const listChar = useSelector(state => state.character);
+  const dispatch = useDispatch();
 
-  const teste = useSelector(state => state.dados)
+  useEffect(() => {
+    dispatch(getCharacters(25));
+  }, []);
 
   return (
     <Container>
-      <Text style={{color: '#fff'}}>Tela characters</Text>
-      <Button onPress={() => reactotron.log(teste)}>
-        <Text>Teste</Text>
-      </Button>
-      <View>
-        {/* <FlatList
-          data={this.state.data}
+      
+      {/* <Button onPress={() => getCharacters(1)} /> */}
+    
+      <View style={{flex: 1}}>
+        <FlatList
+          data={listChar}
           renderItem={({item}) => (
             <>
               <Image
@@ -35,7 +42,7 @@ export default function Characters() {
               <Text style={{marginLeft: 10}}>{item.description}</Text>
             </>
           )}
-        /> */}
+        />
       </View>
     </Container>
   );
