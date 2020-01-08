@@ -22,23 +22,8 @@ const Characters = () => {
 
   useEffect(() => {}, [characters]);
 
-  // _renderItem = ({item}) => {
-  //   return (
-  //     <TouchableOpacity
-  //       onPress={() => reactotron.log('item')}
-  //       style={{flexDirection: 'row', padding: 10, alignItems: 'center'}}>
-  //       <Image
-  //         style={{height: 50, width: 50, borderRadius: 25}}
-  //         source={{uri: `${item.thumbnail.path}.${item.thumbnail.extension}`}}
-  //       />
-  //       <Text style={{marginLeft: 10}}>{item.name}</Text>
-  //     </TouchableOpacity>
-  //   );
-  // };
-
   return (
     <Container>
-      {/* <Button onPress={() => getCharacters(1)} /> */}
       <View style={{ flex: 1 }}>
         <FlatList
           keyExtractor={item => String(item.id)}
@@ -50,17 +35,16 @@ const Characters = () => {
                 style={{
                   flexDirection: 'row',
                   padding: 10,
-                  alignItems: 'center'
+                  alignItems: 'center',
                 }}
               >
                 <Image
                   style={{ height: 50, width: 50, borderRadius: 25 }}
                   source={{
-                    uri: `${item.thumbnail.path}.${item.thumbnail.extension}`
+                    uri: `${item.thumbnail.path}.${item.thumbnail.extension}`,
                   }}
                 />
-                <Text style={{ marginLeft: 10 }}>{item.name}</Text>
-                <Text style={{ marginLeft: 10 }}>{item.description}</Text>
+                <Text style={{ marginLeft: 10, color: '#fff' }}>{item.name}</Text>
               </TouchableOpacity>
             </>
           )}
