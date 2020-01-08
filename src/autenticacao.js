@@ -8,7 +8,7 @@ let timestamp = Math.floor(Date.now() / 1000);
 let hash = md5.create();
 hash.update(timestamp + PRIVATE_KEY + PUBLIC_KEY);
 
-export const getCharacters = (offset) => async dispatch => {
+export const getCharacters = offset => async dispatch => {
   reactotron.log('aqui');
 
   try {
@@ -25,12 +25,4 @@ export const getCharacters = (offset) => async dispatch => {
   } catch (error) {
     reactotron.log('error', error);
   }
-
-  // axios
-  //   .get(
-  //     `${URL_BASE}/characters?ts=${timestamp}&apikey=${PUBLIC_KEY}&hash=${valor}`,
-  //   )
-  //   .then(res => {
-  //     setTeste(res.data);
-  //   });
-}
+};
