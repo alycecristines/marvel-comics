@@ -1,22 +1,19 @@
-import {createStore, compose, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
+import promise from 'redux-promise';
 import reducers from '../reducers';
+import reactotron from '../config/ReactotronConfig';
 
-import Reactotron from '../config/ReactotronConfig';
+const middlewares = applyMiddleware(multi, thunk, promise);
+const store = createStore(
+  reducers,
+  compose(
+    middlewares,
+    reactotron.createEnhancer()
+  )
+);
 
-const middlewares = [multi, thunk];
-
-const enhancers =
-  __DEV__ === true
-    ? compose(applyMiddleware(...middlewares), Reactotron.createEnhancer())
-    : compose(applyMiddleware(...middlewares));
-
-const store =
-  __DEV__ === true
-    ? createStore(reducers, {}, enhancers)
-    : createStore(reducers, applyMiddleware(...middlewares));
-// createStore(reducers, applyMiddleware(...middlewares), Reactotron.createEnhancer());
 // const store = createStore(() => {});
 
 export default store;

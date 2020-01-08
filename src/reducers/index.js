@@ -1,7 +1,7 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
-import characters from './characters';
+import Characters from './characters';
 
 export default combineReducers({
-  characters,
+  Characters
 });
