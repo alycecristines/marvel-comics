@@ -15,10 +15,11 @@ const Characters = () => {
 
   const { characters } = useSelector(state => state.Characters);
   const dispatch = useDispatch();
+  const arrayChar = useSelector(state => state.characters);
 
   useEffect(() => {
     dispatch(getCharacters(1));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {}, [characters]);
 
