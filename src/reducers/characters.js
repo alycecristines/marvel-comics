@@ -3,22 +3,22 @@ const INITIAL_STATE = {
   loadingChar: true,
   loadingPaginate: false,
   refresh: false,
-  data: [],
+  characters: [],
   charInfo: {},
   offset: 1,
-  limit: 10,
+  limit: 10
 };
 
-export default function characters(state = INITIAL_STATE, action) {
-  switch (action.type) {
+export default (state = INITIAL_STATE, { type, payload }) => {
+  switch (type) {
     case 'GET_CHARS_REQUEST':
-      return {...state, loading: true, refresh: true};
+      return { ...state, loading: true, refresh: true };
     case 'GET_CHARS_RESPONSE':
-      return {...state, data: action.payload.data.results};
+      return { ...state, characters: payload };
     case 'GET_CHAR_REQUEST':
-      return {...state, loadingChar: true};
+      return { ...state, loadingChar: true };
     case 'GET_CHAR_RESPONSE':
-      return {...state, loadingChar: false, charInfo: action.payload.data};
+      return { ...state, loadingChar: false, charInfo: false };
     default:
       return state;
   }
