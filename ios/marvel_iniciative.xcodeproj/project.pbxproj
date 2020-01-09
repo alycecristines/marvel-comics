@@ -55,6 +55,10 @@
 		0D507F2504E94ED08331AA07 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6A686CDC914DF48445F9C5 /* rubicon-icon-font.ttf */; };
 		836279AB924B4C0F968A574B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8540A41A1C04D1BBA7005FF /* SimpleLineIcons.ttf */; };
 		54BEC5A65CFC4BB5995E318F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE948CC7AFA34048A085B5F8 /* Zocial.ttf */; };
+		692CCF379CBC413587DF459B /* Marvel-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9584FD9FA5DA4742B191D25E /* Marvel-Bold.ttf */; };
+		55D9BA1003F24AC1A4B4553B /* Marvel-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71AFA284C7C14973A51F6267 /* Marvel-BoldItalic.ttf */; };
+		1F834B4ECBBE4E6CBA0AEE63 /* Marvel-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B5F58035E042FC894AA2F5 /* Marvel-Italic.ttf */; };
+		48C720D3FCA14D06880A7F8A /* Marvel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEFB85CE22F441869275C057 /* Marvel-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		FA6A686CDC914DF48445F9C5 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B8540A41A1C04D1BBA7005FF /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DE948CC7AFA34048A085B5F8 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9584FD9FA5DA4742B191D25E /* Marvel-Bold.ttf */ = {isa = PBXFileReference; name = "Marvel-Bold.ttf"; path = "../src/assets/fonts/Marvel-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		71AFA284C7C14973A51F6267 /* Marvel-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Marvel-BoldItalic.ttf"; path = "../src/assets/fonts/Marvel-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F9B5F58035E042FC894AA2F5 /* Marvel-Italic.ttf */ = {isa = PBXFileReference; name = "Marvel-Italic.ttf"; path = "../src/assets/fonts/Marvel-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EEFB85CE22F441869275C057 /* Marvel-Regular.ttf */ = {isa = PBXFileReference; name = "Marvel-Regular.ttf"; path = "../src/assets/fonts/Marvel-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +265,10 @@
 				FA6A686CDC914DF48445F9C5 /* rubicon-icon-font.ttf */,
 				B8540A41A1C04D1BBA7005FF /* SimpleLineIcons.ttf */,
 				DE948CC7AFA34048A085B5F8 /* Zocial.ttf */,
+				9584FD9FA5DA4742B191D25E /* Marvel-Bold.ttf */,
+				71AFA284C7C14973A51F6267 /* Marvel-BoldItalic.ttf */,
+				F9B5F58035E042FC894AA2F5 /* Marvel-Italic.ttf */,
+				EEFB85CE22F441869275C057 /* Marvel-Regular.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -488,6 +500,10 @@
 				0D507F2504E94ED08331AA07 /* rubicon-icon-font.ttf in Resources */,
 				836279AB924B4C0F968A574B /* SimpleLineIcons.ttf in Resources */,
 				54BEC5A65CFC4BB5995E318F /* Zocial.ttf in Resources */,
+				692CCF379CBC413587DF459B /* Marvel-Bold.ttf in Resources */,
+				55D9BA1003F24AC1A4B4553B /* Marvel-BoldItalic.ttf in Resources */,
+				1F834B4ECBBE4E6CBA0AEE63 /* Marvel-Italic.ttf in Resources */,
+				48C720D3FCA14D06880A7F8A /* Marvel-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

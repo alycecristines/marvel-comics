@@ -4,9 +4,7 @@ const INITIAL_STATE = {
   loadingPaginate: false,
   refresh: false,
   characters: [],
-  charInfo: {},
-  offset: 1,
-  limit: 10
+  charInfo: {}
 };
 
 export default (state = INITIAL_STATE, { type, payload }) => {

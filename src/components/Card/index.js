@@ -7,7 +7,7 @@ export default function Card({ item }) {
       style={{
         margin: 10,
         flexDirection: 'row',
-        height: 100
+        height: 100,
       }}
     >
       <View style={{ flexDirection: 'row', marginLeft: 10 }}>
@@ -25,9 +25,10 @@ export default function Card({ item }) {
           <View style={{ flexDirection: 'row' }}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 20,
                 color: '#f0f0f0',
                 fontFamily: 'Marvel-Bold',
+                textTransform: 'uppercase',
               }}
             >
               {item.name}
@@ -38,6 +39,7 @@ export default function Card({ item }) {
               numberOfLines={2}
               style={{
                 fontSize: 14,
+                color: '#cecece',
               }}
             >
               {item.description !== '' ? item.description : 'A Marvel Character!'}
