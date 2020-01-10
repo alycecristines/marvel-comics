@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from '../Home/styles';
 
 import { getCharacters } from '../../autenticacao';
 import Card from '../../components/Card';
+import Loading from '../../components/Loading';
 
 const Characters = () => {
   const { characters } = useSelector(state => state.Characters);
+  const [loading, setLoading] = useState(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
     dispatch(getCharacters(700));
   }, [dispatch]);
 
@@ -18,13 +22,17 @@ const Characters = () => {
 
   return (
     <Container>
-      <View style={{ flex: 1 }}>
-        <FlatList
-          keyExtractor={item => String(item.id)}
-          data={characters}
-          renderItem={({ item }) => <Card item={item} />}
-        />
-      </View>
+      {loading ? (
+        <Loading />
+      ) : (
+        <View style={{ flex: 1 }}>
+          <FlatList
+            keyExtractor={item => String(item.id)}
+            data={characters}
+            renderItem={({ item }) => <Card item={item} />}
+          />
+        </View>
+      )}
     </Container>
   );
 };
