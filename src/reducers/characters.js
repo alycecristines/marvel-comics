@@ -16,7 +16,7 @@ export default (state = INITIAL_STATE, { type, payload }) => {
     case 'GET_CHAR_REQUEST':
       return { ...state, loadingChar: true };
     case 'GET_CHAR_RESPONSE':
-      return { ...state, loadingChar: false, charInfo: false };
+      return { ...state, loadingChar: false, charInfo: payload.data };
     default:
       return state;
   }

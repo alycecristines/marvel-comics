@@ -1,9 +1,15 @@
 import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Card({ item }) {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('CharacterDetails', { setParams: item.id });
+      }}
       style={{
         margin: 10,
         flexDirection: 'row',

@@ -9,20 +9,24 @@ import Loading from '../../components/Loading';
 
 const Characters = () => {
   const { characters } = useSelector(state => state.Characters);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
-    dispatch(getCharacters(700));
+    dispatch(getCharacters(200));
+
+    return () => {
+      setLoading(true);
+    };
   }, [dispatch]);
 
   useEffect(() => {}, [characters]);
 
   return (
     <Container>
-      {loading ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <View style={{ flex: 1 }}>

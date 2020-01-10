@@ -18,6 +18,7 @@ import {
 import Home from './views/Home';
 import Series from './views/Series';
 import Characters from './views/Characters';
+import CharacterDetails from './views/CharacterDetails';
 
 const Stack = createStackNavigator();
 const HomeStackNavigator = () => {
@@ -80,11 +81,41 @@ const SeriesStackNavigator = () => {
   );
 };
 
+const CharDetailsStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Detalhes"
+        component={CharacterDetails}
+        options={({navigation}) => {
+          return {
+            headerStyle: {backgroundColor: '#222'},
+            headerTitleStyle: {color: '#fff'},
+            headerTitleAlign: 'center',
+            headerLeft: () => (
+              <TouchableOpacity
+                style={{margin: 10}}
+                onPress={() => navigation.openDrawer()}>
+                <Icon name="bars" size={24} style={{color: '#fff'}} />
+              </TouchableOpacity>
+            ),
+            headerRight: () => (
+              <TouchableOpacity style={{margin: 10}}>
+                <Icon name="search" size={24} style={{color: '#fff'}} />
+              </TouchableOpacity>
+            ),
+          };
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const CharactersStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Characters"
+        name="Personagens"
         component={Characters}
         options={({navigation}) => {
           return {
@@ -138,7 +169,7 @@ export default function Routes() {
       }}>
       <Drawer.Screen name="Home" component={HomeStackNavigator} />
       <Drawer.Screen name="Series" component={SeriesStackNavigator} />
-      <Drawer.Screen name="Characters" component={CharactersStackNavigator} />
+      <Drawer.Screen name="Personagens" component={CharactersStackNavigator} />
     </Drawer.Navigator>
   );
 }
