@@ -1,10 +1,21 @@
 import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerActions } from '@react-navigation/routers';
+import reactotron from 'reactotron-react-native';
+import { useDispatch } from 'react-redux';
+
+import { getCharacterInfo } from '../../actions/characters';
 
 export default function Card({ item }) {
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
   return (
     <TouchableOpacity
-      onPress={() => {}}
+      onPress={() => {
+        dispatch(getCharacterInfo(item));
+        navigation.navigate('CharacterDetails');
+      }}
       style={{
         margin: 10,
         flexDirection: 'row',

@@ -15,6 +15,7 @@ import Home from './views/Home';
 import Series from './views/Series';
 import Characters from './views/Characters';
 import CharacterDetails from './views/CharacterDetails';
+import reactotron from 'reactotron-react-native';
 
 const Stack = createStackNavigator();
 const HomeStackNavigator = () => {
@@ -32,12 +33,12 @@ const HomeStackNavigator = () => {
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
                 <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
-            ),
-            headerRight: () => (
-              <TouchableOpacity style={{ margin: 10 }}>
-                <Icon name="search" size={24} style={{ color: '#fff' }} />
-              </TouchableOpacity>
-            ),
+            )
+            // headerRight: () => (
+            //   <TouchableOpacity style={{ margin: 10 }}>
+            //     <Icon name="search" size={24} style={{ color: '#fff' }} />
+            //   </TouchableOpacity>
+            // ),
           };
         }}
       />
@@ -60,12 +61,12 @@ const SeriesStackNavigator = () => {
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
                 <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
-            ),
-            headerRight: () => (
-              <TouchableOpacity style={{ margin: 10 }}>
-                <Icon name="search" size={24} style={{ color: '#fff' }} />
-              </TouchableOpacity>
-            ),
+            )
+            // headerRight: () => (
+            //   <TouchableOpacity style={{ margin: 10 }}>
+            //     <Icon name="search" size={24} style={{ color: '#fff' }} />
+            //   </TouchableOpacity>
+            // ),
           };
         }}
       />
@@ -73,11 +74,11 @@ const SeriesStackNavigator = () => {
   );
 };
 
-const CharDetailsStackNavigator = () => {
+const CharDetailsStackNavigator = ({route}) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Detalhes"
+        name="CharacterDetails"
         component={CharacterDetails}
         options={({ navigation }) => {
           return {
@@ -88,12 +89,12 @@ const CharDetailsStackNavigator = () => {
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
                 <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
-            ),
-            headerRight: () => (
-              <TouchableOpacity style={{ margin: 10 }}>
-                <Icon name="search" size={24} style={{ color: '#fff' }} />
-              </TouchableOpacity>
-            ),
+            )
+            // headerRight: () => (
+            //   <TouchableOpacity style={{ margin: 10 }}>
+            //     <Icon name="search" size={24} style={{ color: '#fff' }} />
+            //   </TouchableOpacity>
+            // ),
           };
         }}
       />
@@ -105,7 +106,7 @@ const CharactersStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Personagens"
+        name="Characters"
         component={Characters}
         options={({ navigation }) => {
           return {
@@ -116,12 +117,12 @@ const CharactersStackNavigator = () => {
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
                 <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
-            ),
-            headerRight: () => (
-              <TouchableOpacity style={{ margin: 10 }}>
-                <Icon name="search" size={24} style={{ color: '#fff' }} />
-              </TouchableOpacity>
-            ),
+            )
+            // headerRight: () => (
+            //   <TouchableOpacity style={{ margin: 10 }}>
+            //     <Icon name="search" size={24} style={{ color: '#fff' }} />
+            //   </TouchableOpacity>
+            // ),
           };
         }}
       />
@@ -158,7 +159,8 @@ export default function Routes() {
     >
       <Drawer.Screen name="Home" component={HomeStackNavigator} />
       <Drawer.Screen name="Series" component={SeriesStackNavigator} />
-      <Drawer.Screen name="Personagens" component={CharactersStackNavigator} />
+      <Drawer.Screen name="Characters" component={CharactersStackNavigator} />
+      <Drawer.Screen name="CharacterDetails" component={CharDetailsStackNavigator} />
     </Drawer.Navigator>
   );
 }

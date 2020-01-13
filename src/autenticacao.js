@@ -21,18 +21,6 @@ export const getCharacters = offset => async dispatch => {
   dispatch(getCharactersResponse(results));
 };
 
-export const getCharacter = (offset, id) => async dispatch => {
-  const {
-    data: {
-      data: { results },
-    },
-  } = await api.get(
-    `characters/${id}?ts=${timestamp}&orderBy=name&limit=20&offset=${offset}&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`,
-  );
-
-  dispatch(getCharacterResponse(results));
-};
-
 export const getSeries = offset => async dispatch => {
   const {
     data: {

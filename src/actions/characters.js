@@ -8,12 +8,7 @@ export const getCharactersResponse = data => ({
   payload: data
 });
 
-export const getCharacterRequest = id => ({
-  type: 'GET_CHAR_REQUEST',
-  payload: {id}
-});
-
-export const getCharacterResponse = data => ({
-  type: 'GET_CHAR_RESPONSE',
+export const getCharacterInfo = data => ({
+  type: 'GET_CHAR_INFO',
   payload: data
 });
