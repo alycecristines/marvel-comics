@@ -4,7 +4,6 @@ const INITIAL_STATE = {
   loadingPaginate: false,
   refresh: false,
   characters: [],
-  selectedCharacter: {},
   charInfo: {}
 };
 
@@ -14,8 +13,6 @@ export default (state = INITIAL_STATE, { type, payload }) => {
       return { ...state, loading: true, refresh: true };
     case 'GET_CHARS_RESPONSE':
       return { ...state, characters: payload };
-    case 'GET_CHAR_REQUEST':
-      return { ...state, loadingChar: true };
     case 'GET_CHAR_INFO':
       return { ...state, loadingChar: false, charInfo: payload };
     default:

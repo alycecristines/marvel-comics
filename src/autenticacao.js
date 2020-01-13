@@ -1,5 +1,4 @@
 import md5 from 'js-md5';
-import reactotron from 'reactotron-react-native';
 import { PUBLIC_KEY, PRIVATE_KEY } from './constants';
 import api from './services/api';
 import { getCharactersResponse } from './actions/characters';
