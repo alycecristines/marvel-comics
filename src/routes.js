@@ -1,19 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import {
-  Perfil,
-  Title,
-  HeaderBox,
-} from './components/CustomDrawerContent/styles';
+import { Perfil, Title, HeaderBox } from './components/CustomDrawerContent/styles';
 
 import Home from './views/Home';
 import Series from './views/Series';
@@ -27,21 +23,19 @@ const HomeStackNavigator = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
-            headerStyle: {backgroundColor: '#222'},
-            headerTitleStyle: {color: '#fff'},
+            headerStyle: { backgroundColor: '#222' },
+            headerTitleStyle: { color: '#fff' },
             headerTitleAlign: 'center',
             headerLeft: () => (
-              <TouchableOpacity
-                style={{margin: 10}}
-                onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
+                <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity style={{margin: 10}}>
-                <Icon name="search" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }}>
+                <Icon name="search" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
           };
@@ -57,21 +51,19 @@ const SeriesStackNavigator = () => {
       <Stack.Screen
         name="Series"
         component={Series}
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
-            headerStyle: {backgroundColor: '#222'},
-            headerTitleStyle: {color: '#fff'},
+            headerStyle: { backgroundColor: '#222' },
+            headerTitleStyle: { color: '#fff' },
             headerTitleAlign: 'center',
             headerLeft: () => (
-              <TouchableOpacity
-                style={{margin: 10}}
-                onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
+                <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity style={{margin: 10}}>
-                <Icon name="search" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }}>
+                <Icon name="search" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
           };
@@ -87,21 +79,19 @@ const CharDetailsStackNavigator = () => {
       <Stack.Screen
         name="Detalhes"
         component={CharacterDetails}
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
-            headerStyle: {backgroundColor: '#222'},
-            headerTitleStyle: {color: '#fff'},
+            headerStyle: { backgroundColor: '#222' },
+            headerTitleStyle: { color: '#fff' },
             headerTitleAlign: 'center',
             headerLeft: () => (
-              <TouchableOpacity
-                style={{margin: 10}}
-                onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
+                <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity style={{margin: 10}}>
-                <Icon name="search" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }}>
+                <Icon name="search" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
           };
@@ -117,21 +107,19 @@ const CharactersStackNavigator = () => {
       <Stack.Screen
         name="Personagens"
         component={Characters}
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
-            headerStyle: {backgroundColor: '#222'},
-            headerTitleStyle: {color: '#fff'},
+            headerStyle: { backgroundColor: '#222' },
+            headerTitleStyle: { color: '#fff' },
             headerTitleAlign: 'center',
             headerLeft: () => (
-              <TouchableOpacity
-                style={{margin: 10}}
-                onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
+                <Icon name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity style={{margin: 10}}>
-                <Icon name="search" size={24} style={{color: '#fff'}} />
+              <TouchableOpacity style={{ margin: 10 }}>
+                <Icon name="search" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
           };
@@ -166,7 +154,8 @@ export default function Routes() {
       drawerContentOptions={{
         activeTintColor: '#fff',
         inactiveTintColor: '#fff',
-      }}>
+      }}
+    >
       <Drawer.Screen name="Home" component={HomeStackNavigator} />
       <Drawer.Screen name="Series" component={SeriesStackNavigator} />
       <Drawer.Screen name="Personagens" component={CharactersStackNavigator} />
