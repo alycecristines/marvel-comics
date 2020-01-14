@@ -15,6 +15,7 @@ import Home from './views/Home';
 import Series from './views/Series';
 import Characters from './views/Characters';
 import CharacterDetails from './views/CharacterDetails';
+import SerieDetails from './views/SerieDetails';
 import reactotron from 'reactotron-react-native';
 
 const Stack = createStackNavigator();
@@ -67,6 +68,23 @@ const SeriesStackNavigator = () => {
             //     <Icon name="search" size={24} style={{ color: '#fff' }} />
             //   </TouchableOpacity>
             // ),
+          };
+        }}
+      />
+      <Stack.Screen
+        name="SerieDetails"
+        component={SerieDetails}
+        options={({ navigation }) => {
+          return {
+            headerStyle: { backgroundColor: '#222' },
+            title: 'Detalhes',
+            headerTitleAlign: 'center',
+            headerTitleStyle: { color: '#fff' },
+            headerLeft: () => (
+              <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.goBack()}>
+                <Icon name="arrow-left" size={24} style={{ color: '#fff' }} />
+              </TouchableOpacity>
+            ),
           };
         }}
       />

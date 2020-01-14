@@ -1,19 +1,30 @@
 import React from 'react';
 import { View, Image, Text, Dimensions, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+
+import { getSerieInfo } from '../../actions/series';
 
 export default function CardVerticalBox({ item }) {
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
   return (
     <TouchableOpacity
+      onPress={() => {
+        dispatch(getSerieInfo(item));
+        navigation.navigate('SerieDetails');
+      }}
       style={{
         width: Dimensions.get('window').width / 2 - 10,
         height: 250,
         borderRadius: 6,
         backgroundColor: '#cecece',
         padding: 6,
-        marginTop: 5,
+        marginTop: 10,
         marginBottom: 5,
-        marginHorizontal: 3,
-        marginVertical: 1.5,
+        marginHorizontal: 5,
+        marginVertical: 3,
       }}
     >
       <View style={{ paddingVertical: 15 }}>

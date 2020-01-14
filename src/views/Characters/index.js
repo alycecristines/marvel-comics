@@ -3,7 +3,7 @@ import { View, FlatList, ActivityIndicator } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from '../Home/styles';
 
-import { getCharacters } from '../../autenticacao';
+import { getCharacters } from '../../requests';
 import Card from '../../components/Card';
 import LoadingScreen from '../../components/Loading';
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getSeries } from '../../autenticacao';
+import { getSeries } from '../../requests';
 import CardVerticalBox from '../../components/CardVerticalBox';
 
 import { Container } from '../Home/styles';
