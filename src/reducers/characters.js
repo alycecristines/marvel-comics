@@ -1,18 +1,19 @@
 const INITIAL_STATE = {
-  loading: true,
+  isLoading: true,
   loadingChar: true,
-  loadingPaginate: false,
-  refresh: false,
+  // loadingPaginate: false,
+  // refresh: false,
+  // offset: 0,
   characters: [],
-  charInfo: {}
+  charInfo: {},
 };
 
 export default (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
     case 'GET_CHARS_REQUEST':
-      return { ...state, loading: true, refresh: true };
+      return { ...state, isLoading: true };
     case 'GET_CHARS_RESPONSE':
-      return { ...state, characters: payload };
+      return { ...state, isLoading: false, characters: payload };
     case 'GET_CHAR_INFO':
       return { ...state, loadingChar: false, charInfo: payload };
     default:

@@ -1,6 +1,5 @@
-export const getSeriesRequest = offset => ({
-  type: 'GET_SERIES_REQUEST',
-  payload: {offset}
+export const getSeriesRequest = () => ({
+  type: 'GET_SERIES_REQUEST'
 });
 
 export const getSeriesResponse = data => ({
@@ -8,12 +7,7 @@ export const getSeriesResponse = data => ({
   payload: data
 });
 
-export const getSerieRequest = id => ({
-  type: 'GET_SERIE_REQUEST',
-  payload: {id}
-});
-
-export const getSerieResponse = data => ({
-  type: 'GET_SERIE_RESPONSE',
+export const getSerieInfo = data => ({
+  type: 'GET_SERIE_INFO',
   payload: data
 });

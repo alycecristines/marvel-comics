@@ -8,26 +8,32 @@ const timestamp = Math.floor(Date.now() / 1000);
 const hash = md5.create();
 hash.update(timestamp + PRIVATE_KEY + PUBLIC_KEY);
 
-export const getCharacters = offset => async dispatch => {
+export const getCharacters = offset => async (dispatch, getState) => {
   const {
     data: {
       data: { results },
     },
   } = await api.get(
-    `characters?ts=${timestamp}&orderBy=name&limit=20&offset=${offset}&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`,
+    `characters?ts=${timestamp}&orderBy=name&limit=10&offset=${offset}&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`,
   );
 
-  dispatch(getCharactersResponse(results));
+  const { characters } = getState().Characters;
+  if (characters.length > 0) {
+    dispatch(getCharactersResponse([...characters, ...results]));
+  } else dispatch(getCharactersResponse(results));
 };
 
-export const getSeries = offset => async dispatch => {
+export const getSeries = offset => async (dispatch, getState) => {
   const {
     data: {
       data: { results },
     },
   } = await api.get(
-    `series?ts=${timestamp}&limit=20&offset=${offset}&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`,
+    `series?ts=${timestamp}&limit=10&offset=${offset}&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`,
   );
 
-  dispatch(getSeriesResponse(results));
+  const { series } = getState().Series;
+  if (series.length > 0) {
+    dispatch(getSeriesResponse([...series, ...results]));
+  } else dispatch(getSeriesResponse(results));
 };

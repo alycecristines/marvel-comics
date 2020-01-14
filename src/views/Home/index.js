@@ -39,6 +39,19 @@ export default function Home() {
           >
             See All
           </Text>
+          {/* <View style={{ flex: 1 }}>
+            <FlatList
+              keyExtractor={item => String(item.id)}
+              data={characters}
+              renderItem={({ item }) => <Card item={item} />}
+              onEndReached={loadCharacters}
+              onEndReachedThreshold={0.1}
+              // TODO: Inserir animação aqui
+              // ListFooterComponent={renderFooter}
+              // TODO: chamar o refresh da página
+              // ListHeaderComponent={}
+            />
+          </View> */}
         </View>
       </Container>
     </>

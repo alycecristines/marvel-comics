@@ -1,6 +1,10 @@
-export const getCharactersRequest = offset => ({
+// export const getCharactersRequest = offset => ({
+//   type: 'GET_CHARS_REQUEST',
+//   payload: {offset}
+// });
+
+export const getCharactersRequest = () => ({
   type: 'GET_CHARS_REQUEST',
-  payload: {offset}
 });
 
 export const getCharactersResponse = data => ({

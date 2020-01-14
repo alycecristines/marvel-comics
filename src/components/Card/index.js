@@ -8,6 +8,12 @@ import { getCharacterInfo } from '../../actions/characters';
 export default function Card({ item }) {
   const navigation = useNavigation();
   const dispatch = useDispatch();
+
+  // TODO: Não mostrar na lista personagens sem imagem
+  // path = 'image_not_available';
+  // const hasImage =
+  // if (item.thumbnail.path )
+
   return (
     <TouchableOpacity
       onPress={() => {
