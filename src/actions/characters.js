@@ -16,3 +16,8 @@ export const getCharacterInfo = data => ({
   type: 'GET_CHAR_INFO',
   payload: data
 });
+
+export const setCharacterInfo = data => ({
+  type: 'SET_CHAR_INFO',
+  payload: data
+})
