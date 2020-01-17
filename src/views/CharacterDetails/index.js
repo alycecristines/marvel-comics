@@ -89,21 +89,6 @@ const CharacterDetails = () => {
             </View>
           )}
         </Formik>
-        {/* <View
-          style={{ flexDirection: 'row', justifyContent: 'center', padding: 20, marginLeft: 50 }}
-        >
-          <TextInput style={style} onFocus={onFocus} onBlur={onBlur} editable={editable}>
-            {charInfo.name}
-          </TextInput>
-          <TouchableOpacity
-            style={{ margin: 10, marginLeft: 50 }}
-            onPress={() => {
-              setEditable(true);
-            }}
-          >
-            <Icon name="pencil-alt" size={24} style={{ color: '#fff' }} />
-          </TouchableOpacity>
-        </View> */}
         <Text
           style={{
             fontSize: 14,
@@ -113,7 +98,6 @@ const CharacterDetails = () => {
         >
           {charInfo.description !== '' ? charInfo.description : 'A Marvel Character!'}
         </Text>
-        {/* <Button title="teste" onPress={() => reactotron.log(charInfo)}></Button> */}
       </View>
     </Container>
   );
