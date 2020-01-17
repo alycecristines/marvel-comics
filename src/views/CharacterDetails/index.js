@@ -5,7 +5,7 @@ import { Container } from '../Home/styles';
 import { Formik } from 'formik';
 
 import reactotron from 'reactotron-react-native';
-import { getCharactersResponse, setCharacterInfo } from '../../actions/characters';
+import { getCharactersResponse, setCharacterInfo, resetStatus } from '../../actions/characters';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const CharacterDetails = () => {
@@ -35,17 +35,18 @@ const CharacterDetails = () => {
   };
 
   const onSubmit = values => {
-    const newCharInfo = { ...charInfo, values };
+    const newCharInfo = { ...charInfo, name: values.name };
     dispatch(setCharacterInfo(newCharInfo));
 
-    const newArr = characters.filter(item => {
+    const newArr = characters.map(item => {
       if (item.id === charInfo.id) {
         return newCharInfo;
       } else {
         return item;
       }
     });
-    dispatch(getCharactersResponse([...newArr, charInfo]));
+    dispatch(resetStatus());
+    dispatch(getCharactersResponse([...newArr]));
   };
 
   return (

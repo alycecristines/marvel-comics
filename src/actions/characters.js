@@ -21,3 +21,7 @@ export const setCharacterInfo = data => ({
   type: 'SET_CHAR_INFO',
   payload: data
 })
+
+export const resetStatus = () => ({
+  type: 'RESET_CHARS_LIST'
+})

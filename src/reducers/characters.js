@@ -18,6 +18,8 @@ export default (state = INITIAL_STATE, { type, payload }) => {
       return { ...state, loadingChar: false, charInfo: payload };
       case 'SET_CHAR_INFO':
         return { ...state, charInfo: payload}
+      case 'RESET_CHARS_LIST':
+        return { ...state, characters: []}
     default:
       return state;
   }
