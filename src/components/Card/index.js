@@ -58,7 +58,7 @@ export default function Card({ item }) {
                 color: '#cecece',
               }}
             >
-              {item.description !== '' ? item.description : 'A Marvel Character!'}
+              {item.description && 'A Marvel Character!'}
             </Text>
           </View>
         </View>

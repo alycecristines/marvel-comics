@@ -6,10 +6,12 @@ import { Container } from '../Home/styles';
 import { getCharacters } from '../../requests';
 import Card from '../../components/Card';
 import LoadingScreen from '../../components/Loading';
+import SearchBox from '../../components/Search';
 
 const Characters = () => {
   const { characters, isLoading } = useSelector(state => state.Characters);
   const [offset, setOffset] = useState(0);
+  const [search, setSearch] = useState(null);
   const [loadItems, setLoadItems] = useState(false);
   const dispatch = useDispatch();
 
@@ -42,9 +44,14 @@ const Characters = () => {
   return (
     <Container>
       <View style={{ flex: 1 }}>
+        <SearchBox value={setSearch} />
         <FlatList
           keyExtractor={item => String(item.id)}
-          data={characters}
+          data={
+            search
+              ? characters.filter(item => item.name.toUpperCase().includes(search))
+              : characters
+          }
           renderItem={({ item }) => <Card item={item} />}
           onEndReached={loadCharacters}
           onEndReachedThreshold={1}
