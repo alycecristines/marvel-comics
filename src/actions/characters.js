@@ -9,19 +9,19 @@ export const getCharactersRequest = () => ({
 
 export const getCharactersResponse = data => ({
   type: 'GET_CHARS_RESPONSE',
-  payload: data,
+  payload: data
 });
 
 export const getCharacterInfo = data => ({
   type: 'GET_CHAR_INFO',
-  payload: data,
+  payload: data
 });
 
 export const setCharacterInfo = data => ({
   type: 'SET_CHAR_INFO',
-  payload: data,
-});
+  payload: data
+})
 
 export const resetStatus = () => ({
-  type: 'RESET_CHARS_LIST',
-});
+  type: 'RESET_CHARS_LIST'
+})

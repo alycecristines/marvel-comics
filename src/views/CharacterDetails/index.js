@@ -82,9 +82,7 @@ const CharacterDetails = () => {
               />
               <TouchableOpacity
                 style={{ margin: 10, marginLeft: 50 }}
-                onPress={() => {
-                  inputRef.current.focus();
-                }}
+                onPress={() => {inputRef.current.focus()}}
               >
                 <Icon name="pencil-alt" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
