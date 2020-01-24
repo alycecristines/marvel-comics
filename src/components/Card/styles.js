@@ -29,5 +29,15 @@ export const TextName = styled.Text`
   font-size: 20px;
   color: #f0f0f0;
   font-family: 'Marvel-Bold';
-  text-transform: 'uppercase';
+  text-transform: uppercase;
+`;
+
+export const DescriptionContainer = styled.View`
+  flex-direction: row;
+  margin-top: 10px;
+`;
+
+export const TextDescription = styled.Text`
+  font-size: 14px;
+  color: #cecece;
 `;

@@ -18,9 +18,7 @@ export const getCharacters = offset => async (dispatch, getState) => {
   );
 
   const { characters } = getState().Characters;
-  if (characters.length > 0) {
-    dispatch(getCharactersResponse([...characters, ...results]));
-  } else dispatch(getCharactersResponse(results));
+  dispatch(getCharactersResponse([...characters, ...results]));
 };
 
 export const getSeries = offset => async (dispatch, getState) => {
@@ -33,7 +31,5 @@ export const getSeries = offset => async (dispatch, getState) => {
   );
 
   const { series } = getState().Series;
-  if (series.length > 0) {
-    dispatch(getSeriesResponse([...series, ...results]));
-  } else dispatch(getSeriesResponse(results));
+  dispatch(getSeriesResponse([...series, ...results]));
 };

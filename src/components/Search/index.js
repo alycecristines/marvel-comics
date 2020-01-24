@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SearchBar } from 'react-native-elements';
 
-export default function SearchBox(item) {
+const SearchBox = item => {
   const [value, setValue] = useState('');
 
   const updateSearch = () => {
@@ -9,4 +9,6 @@ export default function SearchBox(item) {
   };
 
   return <SearchBar placeholder="Pesquisar nome..." onChangeText={updateSearch} value={value} />;
-}
+};
+
+export default SearchBox;

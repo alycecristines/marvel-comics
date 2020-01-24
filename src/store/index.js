@@ -6,14 +6,6 @@ import reducers from '../reducers';
 import reactotron from '../config/ReactotronConfig';
 
 const middlewares = applyMiddleware(multi, thunk, promise);
-const store = createStore(
-  reducers,
-  compose(
-    middlewares,
-    reactotron.createEnhancer()
-  )
-);
-
-// const store = createStore(() => {});
+const store = createStore(reducers, compose(middlewares, reactotron.createEnhancer()));
 
 export default store;

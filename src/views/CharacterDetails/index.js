@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { View, Image, Button, Text, TouchableOpacity, TextInput } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Image, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from '../Home/styles';
 import { Formik } from 'formik';
 
-import reactotron from 'reactotron-react-native';
 import { getCharactersResponse, setCharacterInfo, resetStatus } from '../../actions/characters';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -82,7 +81,9 @@ const CharacterDetails = () => {
               />
               <TouchableOpacity
                 style={{ margin: 10, marginLeft: 50 }}
-                onPress={() => {inputRef.current.focus()}}
+                onPress={() => {
+                  inputRef.current.focus();
+                }}
               >
                 <Icon name="pencil-alt" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
