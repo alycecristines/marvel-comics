@@ -32,7 +32,7 @@ const HomeStackNavigator = () => {
             headerTitleAlign: 'center',
             headerLeft: () => (
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{ color: '#fff' }} />
+                <Icon testID="bars" name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             // headerRight: () => (
@@ -60,7 +60,7 @@ const SeriesStackNavigator = () => {
             headerTitleAlign: 'center',
             headerLeft: () => (
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{ color: '#fff' }} />
+                <Icon testID="bars" name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             // headerRight: () => (
@@ -105,7 +105,7 @@ const CharactersStackNavigator = () => {
             headerTitleAlign: 'center',
             headerLeft: () => (
               <TouchableOpacity style={{ margin: 10 }} onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={24} style={{ color: '#fff' }} />
+                <Icon testID="bars" name="bars" size={24} style={{ color: '#fff' }} />
               </TouchableOpacity>
             ),
             // headerRight: () => (
@@ -153,6 +153,7 @@ const Drawer = createDrawerNavigator();
 export default function Routes() {
   return (
     <Drawer.Navigator
+      testID="drawer"
       initialRouteName="Home"
       drawerStyle={{
         backgroundColor: '#333',
