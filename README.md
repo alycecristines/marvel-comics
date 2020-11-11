@@ -1,5 +1,5 @@
 # marvel-comics
-Projeto pessoal. App que comunica com API da Marvel e lista personagens e comics que participam
+Projeto pessoal. App construido em React Native que comunica com API da Marvel e lista personagens e comics que participam
 
 > Ser o melhor que você pode ser é possível para qualquer um que focar nisso.
 
